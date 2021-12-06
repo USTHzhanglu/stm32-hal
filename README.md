@@ -29,3 +29,4 @@
 
 [STM32 HAL库快速实战【四】《串口简单使用》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15645877.html)
 
+[STM32 HAL库快速实战【五】《控制串口电机》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15649097.html)
