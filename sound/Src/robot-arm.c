@@ -48,7 +48,6 @@ __HAL_TIM_SetCompare(&htim4,TIM_CHANNEL_2,compare[4]);
 __HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_1,compare[5]);
 		return;
 }
-
 /**
  * @brief  打印当前关节角度
  * @param  ：arm_rad[6]，分别储存每个舵机转动角度

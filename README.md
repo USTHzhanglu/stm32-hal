@@ -24,12 +24,9 @@
 ## 教程目录
 
 - [STM32 HAL库快速实战【一】《32点灯》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15640624.html)
-
 - [STM32 HAL库快速实战【三】《pwm控制舵机》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15643282.html)
-
 - [STM32 HAL库快速实战【四】《串口简单使用》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15645877.html)
 - [STM32 HAL库快速实战【五】《控制串口电机》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15649097.html)
-
 - [STM32 HAL库快速实战【六】《蓝牙控制》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15650873.html)
-
 - [STM32 HAL库快速实战【七】《机械臂控制》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15662604.html)
+- [STM32 HAL库快速实战【八】《声音传感器的使用》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15667610.html)

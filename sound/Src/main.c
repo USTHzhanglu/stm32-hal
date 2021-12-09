@@ -29,6 +29,7 @@
 #include "motor.h"
 #include "robot-arm.h"
 #include "string.h"
+#include "sensor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
