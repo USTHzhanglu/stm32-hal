@@ -76,6 +76,7 @@ uint16_t get_csb_value(void) {
  * @retval 处理后的超声波数据  
 **/  
 int get_adc_csb_middle() {
+	
 	uint8_t i;
 	static int ad_value[5] = {0}, myvalue;// ad_value_bak[5] = {0}, 
 	for(i=0;i<5;i++)ad_value[i] = get_csb_value();
@@ -108,5 +109,66 @@ void hcsr_task(void)
 		}else{
 			motor_set(speed,speed);
 		}
+	}
+}
+
+/**
+ * @brief  : 识别木块颜色,红绿蓝
+ * @param  ：无
+ * @retval   识别的颜色，R G B
+**/  
+COLOR_RGBC color_rgbc;
+uint8_t get_color() {
+	TCS34725_GetRawData(&color_rgbc);//获取RGB
+	if(color_rgbc.c>400){return 0;}
+      if (color_rgbc.r > color_rgbc.g && color_rgbc.r  > color_rgbc.b ) {
+		//usart_send_str(&huart3,(uint8_t *)"May RED\r\n");
+		  return 'R';
+      } else if (color_rgbc.g > color_rgbc.r && color_rgbc.g  > color_rgbc.b) {
+		  //usart_send_str(&huart3,(uint8_t *)"May GREEN\r\n");
+		  return 'G';
+      } else if (color_rgbc.b > color_rgbc.g && color_rgbc.b  > color_rgbc.r) {
+		  //usart_send_str(&huart3,(uint8_t *)"May BULE\r\n");
+		  return 'B';
+      }
+	return 0;
+}
+
+/**
+ * @brief  ：处理颜色模块采集到的数据，取采集到的中间值
+ * @param  ：数组地址，元素个数
+ * @retval 处理后的颜色值  
+**/  
+char get_adc_color_middle() {
+	YSSB_LED(1);
+	uint8_t i;
+	static int ad_value[5] = {0}, myvalue;// ad_value_bak[5] = {0}, 
+	for(i=0;i<5;i++){ad_value[i] = get_color();HAL_Delay(200);};
+	selection_sort(ad_value, 5);
+	myvalue = ad_value[2];
+	YSSB_LED(0);
+	return myvalue;  
+}
+
+/**
+ * @brief  ：颜色传感器对应任务
+ * @param  ：无
+ * @retval 无
+**/ 
+void color_task(){
+	static uint32_t systick_ms_yanse = 0;
+	int millis=HAL_GetTick();//获取系统时间
+	uint8_t cmd_return[128];
+	char color_value;
+	if (millis - systick_ms_yanse > 20) {
+		systick_ms_yanse = HAL_GetTick();
+		color_value = get_adc_color_middle();//获取a0的ad值，计算出距离
+		if(color_value!=0)
+		{
+			sprintf((char *)cmd_return, "Color = [%c]\r\n", color_value);
+			usart_send_str(&huart3,cmd_return);
+		}else
+		{usart_send_str(&huart3,(uint8_t *)"no wood block \r\n");
+		}	  
 	}
 }
