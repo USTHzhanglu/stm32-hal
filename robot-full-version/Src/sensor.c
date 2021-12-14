@@ -1,6 +1,7 @@
 #include "sensor.h"
 #include "motor.h"
 #include "tim.h"
+#include "robot-arm.h"
 /**
  * @brief  ：获取声音传感器的值，并执行对应操作
  * @param  ：None
@@ -12,7 +13,7 @@
 		 HAL_Delay(10);//消抖
 		 if(!sound_vol)
 		 {	//放入需要执行的代码
-			usart_send_str(&huart3,(unsigned char *)"Warning,is ringing\r\n");
+			usart_send_str(&huart3,(unsigned char *)"Warning,is Ringing\r\n");
 			}
 		 }
 	 return;
@@ -163,10 +164,13 @@ void color_task(){
 	if (millis - systick_ms_yanse > 20) {
 		systick_ms_yanse = HAL_GetTick();
 		color_value = get_adc_color_middle();//获取a0的ad值，计算出距离
-		if(color_value!=0)
-		{
+		if(color_value){
 			sprintf((char *)cmd_return, "Color = [%c]\r\n", color_value);
 			usart_send_str(&huart3,cmd_return);
+			if(color_value=='R'){left_task();}
+			else if(color_value=='G'){right_task();}
+			else if(color_value=='B'){back_task();}
+			color_value=NULL;
 		}else
 		{usart_send_str(&huart3,(uint8_t *)"no wood block \r\n");
 		}	  

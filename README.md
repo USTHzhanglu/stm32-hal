@@ -32,4 +32,6 @@
 - [STM32 HAL库快速实战【八】《声音传感器的使用》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15667610.html)
 - [STM32 HAL库快速实战【九】《超声波传感器的使用以及自由避障》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15678420.html)
 - [STM32 HAL库快速实战【十】《颜色传感器的使用》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15680128.html)
-- [STM32 HAL库快速实战【十一】《红外传感器的使用及巡线前进》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15682458.html)
+- [STM32 HAL库快速实战【十一】《红外传感器的使用及巡线循迹》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15682458.html)
+- [STM32 HAL库快速实战总集《完整项目重构》--基于黑龙江科技大学机电工业机器人实训 - USTHzhanglu - 博客园 (cnblogs.com)](https://www.cnblogs.com/USTHzhanglu/p/15684548.html)
+
